@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: techx-photo-generator-app-dev
+  annotations:
+    argocd/app-name: techx-photo-generator-app-dev
+    backstage.io/kubernetes-id: techx-photo-generator-app
+    backstage.io/kubernetes-namespace: techx
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: keynote-demo/techx-photo-generator
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - python
+    - genai
+    - datascience
+    - nodejs
+  links:
+    - url: https://console-openshift-console.apps.keynote.w6gk.p1.openshiftapps.com/dev-pipelines/ns/techx/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.keynote.w6gk.p1.openshiftapps.com/k8s/ns/techx/deployments/techx-photo-generator-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.keynote.w6gk.p1.openshiftapps.com/#https://github.com/keynote-demo/techx-photo-generator?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/blues-man"
